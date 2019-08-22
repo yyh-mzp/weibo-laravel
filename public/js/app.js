@@ -49219,6 +49219,8 @@ var app = new Vue({
   el: '#app'
 });
 
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
