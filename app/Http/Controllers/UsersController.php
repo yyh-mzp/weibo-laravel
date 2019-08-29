@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Mail;
+use App\Models\Status;
 
 class UsersController extends Controller
 {
@@ -56,7 +57,10 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
-        return view('users.show',compact('user'));
+        $statuses = $user->statuses()
+            ->orderBy('created_at','desc')
+            ->paginate(10);
+        return view('users.show',compact('user','statuses'));
     }
 
     //注册自动登陆
