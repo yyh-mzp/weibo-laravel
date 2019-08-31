@@ -4,7 +4,7 @@
     </a>
     <div class="media-body">
         <h5 class="mt-0 mb-1">{{ $user->name }} <small> / {{ $status->created_at->diffForHumans() }}</small></h5>
-        {{ $status->contents }}
+        {{ $status->contents  }}
     </div>
 
     @can('destroy', $status)
